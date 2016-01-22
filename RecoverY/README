@@ -47,8 +47,10 @@ This script also produces the k-mer abundance plot "myplot.jpg"
 
 Next, pick a THRESHOLD_VALUE based on the abundance peak of the k-mer plot
 
+2. Set the check header lines in classify_as_Y_chr.py(line 36,51,70) and find_mates.py(line 22,35) to the first two characters of your FASTQ file headers.
 
-2. Finally, run the main script :
+
+3. Finally, run the main script :
 
 FIRST, set k-mer size and strictness in py_scripts/classify_as_Y_chr.py 
 Strictness is in range (1,length(read))
