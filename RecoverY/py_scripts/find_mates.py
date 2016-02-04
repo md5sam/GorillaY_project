@@ -19,7 +19,7 @@ tries = 0
 
 
 for big_pat_line in pattern_file : 
-	if big_pat_line[0:2] == '@H' :  
+	if big_pat_line[0] == '@' :  
 		small_pat_line = big_pat_line.split(' ')[0]
 		if found  == 1 :
 			#write_saved_record
@@ -32,7 +32,7 @@ for big_pat_line in pattern_file :
 		while found == 0 :
 			big_curr_ref_line = reference_file.readline()
 			small_curr_ref_line = big_curr_ref_line.split(' ')[0]
-			if small_curr_ref_line[0:2] == '@H' :
+			if small_curr_ref_line[0] == '@' :
 				if small_pat_line == small_curr_ref_line :
 					saved_record.append(big_curr_ref_line)
 					saved_record.append(reference_file.readline())
