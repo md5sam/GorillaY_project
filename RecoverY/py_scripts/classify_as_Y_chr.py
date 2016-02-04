@@ -33,7 +33,7 @@ record_count = 0
 read_count = 0
 for line in input_all_types_reads :
 	line_count+=1
-	if line[0:2] == '@H' :
+	if line[0] == '@' :
 		record_count +=1 
 		if flag == 100 :
 			classified_as_male_reads.write(str(save_readname))
@@ -48,7 +48,7 @@ for line in input_all_types_reads :
 		save_read =['']
 		save_rest = ['']
 
-	elif line[0:2] != '@H' and flag == 1 :
+	elif line[0] != '@' and flag == 1 :
 		read_count += 1
 		start_index = 0
 		prospective_matches = 0 
@@ -67,7 +67,7 @@ for line in input_all_types_reads :
 			flag = 100
 		else :
 			flag = 0
-	elif line[0:2] != '@H' and flag==100 :
+	elif line[0] != '@' and flag==100 :
 		save_rest.append(line[:-1])
 	
 	
